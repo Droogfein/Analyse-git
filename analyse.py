@@ -9,6 +9,7 @@
 ##
 ## Außerdem werden verschiedene Zusammenhänge und Gruppierungen
 ## visuell dargestellt mit hilfe des Seaborn Pakets/Bibliothek.
+##
 
 import seaborn as sb
 import pandas as pd
