@@ -12,10 +12,18 @@
 ##
 
 import seaborn as sb
+import matplotlib.pyplot as plt
 import pandas as pd
 
 # .csv Tabelle mit Daten in das Pandas-DataFrame df ablegen
-df = pd.read_csv('Attendance Sheet.csv')
+df = pd.read_csv('Attendance.csv')
 
+sb.countplot(x = "Home" , data=df, order = df['Home'].value_counts().index)
+plt.title("Mannschaften nach Anzahl der gespielten Fußballspiele")
+plt.xlabel("Mannschaften")
+plt.ylabel("Anzahl der Spiele")
+plt.xticks(rotation=90)
+plt.show()
 
-print(df.groupby("Venue")["Date"].count())
+sb.jointplot(data=df, x="Home", y= "Away", kind="hex")
+plt.show()
